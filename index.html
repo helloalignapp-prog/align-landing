@@ -274,9 +274,11 @@ footer {
   <p class="eyebrow">Early access</p>
   <h1>The questions you keep <em>meaning to ask.</em></h1>
   <p class="hero-sub">A daily practice for couples who want to stay genuinely connected — not just coexisting.</p>
-  <div style="width:100%;max-width:22rem;">
-    <iframe data-tally-src="https://tally.so/embed/D4J1qb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="80" frameborder="0" marginheight="0" marginwidth="0" title="ALIGN Waitlist"></iframe>
-  </div>
+  <form class="eform" id="hero-form" onsubmit="submitWL(event,this,'hero-thanks')">
+    <input type="email" placeholder="Your email" required autocomplete="email"/>
+    <button type="submit">Join waitlist</button>
+  </form>
+  <p id="hero-thanks" style="display:none;font-family:var(--serif);font-style:italic;color:var(--mid);margin-top:1rem;font-size:1.0625rem;">You're on the list. We'll be in touch.</p>
 </section>
 
 <!-- PROBLEM -->
@@ -422,9 +424,11 @@ footer {
   <span class="lbl">Early access</span>
   <h2 class="sh">Be the first to<br>try ALIGN.</h2>
   <p class="bt">We're building with a small group of couples first. Join the list and we'll reach out when your spot is ready.</p>
-  <div style="width:100%;max-width:22rem;margin:0 auto;">
-    <iframe data-tally-src="https://tally.so/embed/D4J1qb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="80" frameborder="0" marginheight="0" marginwidth="0" title="ALIGN Waitlist"></iframe>
-  </div>
+  <form class="eform" id="wlist-form" onsubmit="submitWL(event,this,'wlist-thanks')" style="margin:0 auto;">
+    <input type="email" placeholder="Your email" required autocomplete="email"/>
+    <button type="submit">Join waitlist</button>
+  </form>
+  <p id="wlist-thanks" style="display:none;font-family:var(--serif);font-style:italic;color:var(--light);margin-top:1rem;font-size:1.0625rem;">You're on the list. We'll be in touch.</p>
 </section>
 
 <!-- FOOTER -->
@@ -446,17 +450,21 @@ footer {
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function submitWL(e, form) {
+function submitWL(e, form, thanksId) {
   e.preventDefault();
-  const data = new FormData();
-  data.append('email', form.querySelector('input[type="email"]').value);
-  fetch('https://tally.so/r/D4J1qb', { method: 'POST', body: data }).catch(() => {});
-  const btn = form.querySelector('button');
-  btn.textContent = "You're on the list";
-  btn.style.background = '#5C8C7A';
-  btn.style.color = '#fff';
-  btn.disabled = true;
-  form.querySelector('input').disabled = true;
+  const email = form.querySelector('input[type="email"]').value;
+  // Post to Tally via hidden iframe trick
+  const iframe = document.createElement('iframe');
+  iframe.style.display = 'none';
+  document.body.appendChild(iframe);
+  const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+  iframeDoc.open();
+  iframeDoc.write('<form method="POST" action="https://tally.so/r/D4J1qb"><input name="email" value="' + email.replace(/"/g,'') + '"/></form>');
+  iframeDoc.close();
+  iframeDoc.forms[0].submit();
+  // Show confirmation
+  form.style.display = 'none';
+  document.getElementById(thanksId).style.display = 'block';
 }
 function submitSH(e) {
   e.preventDefault();
