@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 375px; height: 720px; overflow: hidden; background: #F5F0E8; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; display: flex; flex-direction: column; }
+  .status { display: flex; justify-content: space-between; padding: 14px 24px 8px; font-size: 12px; font-weight: 500; color: #5C8C7A; }
+  .hdr { display: flex; align-items: center; justify-content: space-between; padding: 2px 24px 12px; }
+  .hdr-left { display: flex; align-items: center; gap: 8px; }
+  .hdr-title { font-size: 13px; font-weight: 400; color: #A8C5BB; }
+  .feed { flex: 1; padding: 0 16px 8px; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
+  .entry { background: white; border: 0.5px solid #E8F2EF; border-radius: 16px; overflow: hidden; }
+  .emeta { display: flex; align-items: center; gap: 8px; padding: 10px 14px 8px; }
+  .av { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; flex-shrink: 0; }
+  .ename { font-size: 12px; font-weight: 500; color: #2C4A3E; }
+  .etime { font-size: 11px; color: #A8C5BB; margin-left: auto; }
+  .ephoto { width: 100%; background: #E8F2EF; display: flex; align-items: center; justify-content: center; }
+  .etext { font-size: 14px; color: #2C4A3E; line-height: 1.6; padding: 0 14px 10px; }
+  .ecap { font-size: 13px; color: #5C8C7A; padding: 6px 14px 0; line-height: 1.5; }
+  .ereact { display: flex; align-items: center; gap: 6px; padding: 8px 14px 10px; }
+  .react { display: flex; align-items: center; gap: 3px; background: #F5F0E8; border-radius: 12px; padding: 3px 8px; font-size: 13px; }
+  .rcount { font-size: 11px; color: #5C8C7A; }
+  .divdr { text-align: center; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #A8C5BB; padding: 2px 0; }
+  .add-bar { padding: 10px 16px 12px; border-top: 0.5px solid #A8C5BB; display: flex; gap: 10px; align-items: center; background: #F5F0E8; }
+  .add-input { flex: 1; background: #F5F0E8; border: 0.5px solid #A8C5BB; border-radius: 20px; padding: 9px 16px; font-size: 14px; color: #2C4A3E; font-family: inherit; outline: none; }
+  .add-input::placeholder { color: #C8C4BA; }
+  .add-photo { width: 34px; height: 34px; border-radius: 50%; background: #E8F2EF; border: none; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .send { width: 34px; height: 34px; border-radius: 50%; background: #2C4A3E; border: none; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .nav { display: flex; border-top: 0.5px solid #A8C5BB; background: #F5F0E8; padding: 8px 0 14px; }
+  .nt { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .nl { font-size: 9px; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="status"><span>9:41</span><span>●●●</span></div>
+<div class="hdr">
+  <div class="hdr-left">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="2.8" cy="7" r="2.2" stroke="#A8C5BB" stroke-width="1" fill="none"/><line x1="5" y1="7" x2="9" y2="7" stroke="#A8C5BB" stroke-width="1" stroke-linecap="round"/><circle cx="11.2" cy="7" r="2.2" stroke="#A8C5BB" stroke-width="1" fill="none"/></svg>
+    <span class="hdr-title">Memories</span>
+  </div>
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#A8C5BB" stroke-width="1.4"/><path d="M12 12l3 3" stroke="#A8C5BB" stroke-width="1.4" stroke-linecap="round"/></svg>
+</div>
+<div class="feed">
+  <div class="divdr">Today</div>
+  <div class="entry">
+    <div class="emeta">
+      <div class="av" style="background:#5C8C7A;color:#E8F2EF;">R</div>
+      <span class="ename">Rachel</span>
+      <span class="etime">8:14 AM</span>
+    </div>
+    <div class="ephoto" style="height:180px;">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><rect x="5" y="10" width="50" height="38" rx="6" fill="#9FE1CB"/><circle cx="30" cy="28" r="10" fill="#1D9E75"/><circle cx="16" cy="17" r="4" fill="#E8F2EF"/></svg>
+    </div>
+    <p class="ecap">Morning mist on the canal. Something about today felt different.</p>
+    <div class="ereact">
+      <div class="react">🥹<span class="rcount">1</span></div>
+      <div class="react">❤️<span class="rcount">1</span></div>
+    </div>
+  </div>
+  <div class="divdr">Yesterday</div>
+  <div class="entry">
+    <div class="emeta">
+      <div class="av" style="background:#2C4A3E;color:#E8F2EF;">S</div>
+      <span class="ename">Ross</span>
+      <span class="etime">7:02 PM</span>
+    </div>
+    <p class="etext">Grateful for the way you remembered what I said three weeks ago. You listen in a way most people don't.</p>
+    <div class="ereact">
+      <div class="react">💚<span class="rcount">1</span></div>
+    </div>
+  </div>
+</div>
+<div class="add-bar">
+  <button class="add-photo"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" stroke="#2C4A3E" stroke-width="1.3"/><circle cx="8" cy="8" r="2.5" stroke="#2C4A3E" stroke-width="1.3"/><circle cx="12" cy="5" r="1" fill="#2C4A3E"/></svg></button>
+  <input class="add-input" placeholder="Something worth remembering…" type="text"/>
+  <button class="send"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#E8F2EF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+</div>
+<div class="nav">
+  <div class="nt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#A8C5BB" stroke-width="1.5" fill="none"/><circle cx="10" cy="10" r="2" fill="#A8C5BB"/></svg><span class="nl" style="color:#A8C5BB;">Home</span></div>
+  <div class="nt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="7.5" cy="10" r="6.5" stroke="#A8C5BB" stroke-width="1.5" fill="none"/><circle cx="12.5" cy="10" r="6.5" stroke="#A8C5BB" stroke-width="1.5" fill="none"/></svg><span class="nl" style="color:#A8C5BB;">Reflections</span></div>
+  <div class="nt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="5.5" cy="10" r="4" stroke="#2C4A3E" stroke-width="1.5" fill="none"/><line x1="9.5" y1="10" x2="10.5" y2="10" stroke="#2C4A3E" stroke-width="1.5" stroke-linecap="round"/><circle cx="14.5" cy="10" r="4" stroke="#2C4A3E" stroke-width="1.5" fill="none"/></svg><span class="nl" style="color:#2C4A3E;">Memories</span></div>
+  <div class="nt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#A8C5BB" stroke-width="1.5"/><circle cx="10" cy="10" r="3.5" stroke="#A8C5BB" stroke-width="1.5"/><circle cx="10" cy="10" r="1.2" fill="#A8C5BB"/></svg><span class="nl" style="color:#A8C5BB;">Intentions</span></div>
+  <div class="nt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8" cy="10" r="5" stroke="#A8C5BB" stroke-width="1.5" fill="none"/><circle cx="12" cy="10" r="5" stroke="#A8C5BB" stroke-width="1.5" fill="none"/><path d="M10 6.5C10.8 7.8 10.8 12.2 10 13.5C9.2 12.2 9.2 7.8 10 6.5Z" fill="#A8C5BB" opacity="0.5"/></svg><span class="nl" style="color:#A8C5BB;">Us</span></div>
+</div>
+</body>
+</html>

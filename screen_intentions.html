@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 375px; height: 720px; overflow: hidden; background: #F5F0E8; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; display: flex; flex-direction: column; }
+  .status { display: flex; justify-content: space-between; padding: 14px 24px 8px; font-size: 12px; font-weight: 500; color: #5C8C7A; }
+  .hdr { display: flex; align-items: center; gap: 8px; padding: 2px 24px 20px; }
+  .hdr-title { font-size: 13px; font-weight: 400; color: #A8C5BB; }
+  .body { flex: 1; padding: 0 20px 20px; display: flex; flex-direction: column; gap: 12px; overflow: hidden; }
+  .card { border-radius: 20px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; }
+  .card-top { display: flex; justify-content: space-between; align-items: center; }
+  .card-who { display: flex; align-items: center; gap: 8px; }
+  .av { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; flex-shrink: 0; }
+  .card-lbl { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+  .card-days { font-size: 11px; font-weight: 500; color: #A8C5BB; }
+  .card-text { font-size: 16px; font-weight: 500; line-height: 1.4; }
+  .prog { height: 3px; border-radius: 2px; overflow: hidden; }
+  .prog-fill { height: 100%; border-radius: 2px; }
+  .nav { display: flex; border-top: 0.5px solid #A8C5BB; background: #F5F0E8; padding: 8px 0 14px; margin-top: auto; }
+  .nt { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .nl { font-size: 9px; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="status"><span>9:41</span><span>●●●</span></div>
+<div class="hdr">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#A8C5BB" stroke-width="1.1"/><circle cx="7" cy="7" r="2.8" stroke="#A8C5BB" stroke-width="1.1"/><circle cx="7" cy="7" r="1" fill="#A8C5BB"/></svg>
+  <span class="hdr-title">Intentions</span>
+</div>
+<div class="body">
+  <div class="card" style="background:#E8F2EF;">
+    <div class="card-top">
+      <div class="card-who">
+        <div class="av" style="background:#5C8C7A;color:#E8F2EF;">R</div>
+        <span class="card-lbl" style="color:#5C8C7A;">Mine</span>
+      </div>
+      <span class="card-days">Day 12 of 30</span>
+    </div>
+    <p class="card-text" style="color:#2C4A3E;">Be more present in conversations — put the phone down.</p>
+    <div class="prog" style="background:rgba(168,197,187,0.3);"><div class="prog-fill" style="width:40%;background:#5C8C7A;"></div></div>
+  </div>
+  <div class="card" style="background:#E8F2EF;">
+    <div class="card-top">
+      <div class="card-who">
+        <div class="av" style="background:#2C4A3E;color:#E8F2EF;">S</div>
+        <span class="card-lbl" style="color:#5C8C7A;">Ross</span>
+      </div>
+      <span class="card-days">Day 12 of 30</span>
+    </div>
+    <p class="card-text" style="color:#2C4A3E;">Finish what I start — stop abandoning projects halfway.</p>
+    <div class="prog" style="background:rgba(168,197,187,0.3);"><div class="prog-fill" style="width:40%;background:#2C4A3E;"></div></div>
+  </div>
+  <div class="card" style="background:#2C4A3E;">
+    <div class="card-top">
+      <div class="card-who">
+        <svg width="22" height="14" viewBox="0 0 22 14" fill="none"><circle cx="5.5" cy="7" r="5" stroke="#A8C5BB" stroke-width="1.2" fill="none"/><circle cx="16.5" cy="7" r="5" stroke="#A8C5BB" stroke-width="1.2" fill="none"/><path d="M11 2.5C12.8 4 12.8 10 11 11.5C9.2 10 9.2 4 11 2.5Z" fill="#A8C5BB" opacity="0.4"/></svg>
+        <span class="card-lbl" style="color:#5C8C7A;">Aligned</span>
+      </div>
+      <span class="card-days" style="color:#5C8C7A;">Day 12 of 30</span>
+    </div>
+    <p class="card-text" style="color:#E8F2EF;">Communicate better — say the hard things gently.</p>
+    <div class="prog" style="background:rgba(255,255,255,0.15);"><div class="prog-fill" style="width:40%;background:#A8C5BB;"></div></div>
+  </div>
+</div>
+<div class="nav">
+  <div class="nt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#A8C5BB" stroke-width="1.5" fill="none"/><circle cx="10" cy="10" r="2" fill="#A8C5BB"/></svg><span class="nl" style="color:#A8C5BB;">Home</span></div>
+  <div class="nt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="7.5" cy="10" r="6.5" stroke="#A8C5BB" stroke-width="1.5" fill="none"/><circle cx="12.5" cy="10" r="6.5" stroke="#A8C5BB" stroke-width="1.5" fill="none"/></svg><span class="nl" style="color:#A8C5BB;">Reflections</span></div>
+  <div class="nt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="5.5" cy="10" r="4" stroke="#A8C5BB" stroke-width="1.5" fill="none"/><line x1="9.5" y1="10" x2="10.5" y2="10" stroke="#A8C5BB" stroke-width="1.5" stroke-linecap="round"/><circle cx="14.5" cy="10" r="4" stroke="#A8C5BB" stroke-width="1.5" fill="none"/></svg><span class="nl" style="color:#A8C5BB;">Memories</span></div>
+  <div class="nt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#2C4A3E" stroke-width="1.5"/><circle cx="10" cy="10" r="3.5" stroke="#2C4A3E" stroke-width="1.5"/><circle cx="10" cy="10" r="1.2" fill="#2C4A3E"/></svg><span class="nl" style="color:#2C4A3E;">Intentions</span></div>
+  <div class="nt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8" cy="10" r="5" stroke="#A8C5BB" stroke-width="1.5" fill="none"/><circle cx="12" cy="10" r="5" stroke="#A8C5BB" stroke-width="1.5" fill="none"/><path d="M10 6.5C10.8 7.8 10.8 12.2 10 13.5C9.2 12.2 9.2 7.8 10 6.5Z" fill="#A8C5BB" opacity="0.5"/></svg><span class="nl" style="color:#A8C5BB;">Us</span></div>
+</div>
+</body>
+</html>
