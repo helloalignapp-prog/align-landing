@@ -274,10 +274,9 @@ footer {
   <p class="eyebrow">Early access</p>
   <h1>The questions you keep <em>meaning to ask.</em></h1>
   <p class="hero-sub">A daily practice for couples who want to stay genuinely connected — not just coexisting.</p>
-  <form class="eform" onsubmit="submitWL(event,this)">
-    <input type="email" placeholder="Your email" required autocomplete="email"/>
-    <button type="submit">Join waitlist</button>
-  </form>
+  <div style="width:100%;max-width:22rem;">
+    <iframe data-tally-src="https://tally.so/embed/D4J1qb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="80" frameborder="0" marginheight="0" marginwidth="0" title="ALIGN Waitlist"></iframe>
+  </div>
 </section>
 
 <!-- PROBLEM -->
@@ -423,10 +422,9 @@ footer {
   <span class="lbl">Early access</span>
   <h2 class="sh">Be the first to<br>try ALIGN.</h2>
   <p class="bt">We're building with a small group of couples first. Join the list and we'll reach out when your spot is ready.</p>
-  <form class="eform" onsubmit="submitWL(event,this)">
-    <input type="email" placeholder="Your email" required autocomplete="email"/>
-    <button type="submit">Join waitlist</button>
-  </form>
+  <div style="width:100%;max-width:22rem;margin:0 auto;">
+    <iframe data-tally-src="https://tally.so/embed/D4J1qb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="80" frameborder="0" marginheight="0" marginwidth="0" title="ALIGN Waitlist"></iframe>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -442,12 +440,12 @@ footer {
     <a href="#">Privacy Policy</a>
     <a href="#">Terms of Service</a>
     <a href="#">Cookie Policy</a>
-    <a href="mailto:helloalignapp@gmail.com">helloalignapp@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#adc5c8c1c1c2ccc1c4cac3ccddddedcac0ccc4c183cec2c0"><span class="__cf_email__" data-cfemail="0a626f6666656b66636d646b7a7a4a6d676b636624696567">[email&#160;protected]</span></a>
   </div>
   <span class="fcopy-t">&copy; 2025 [Company Name] LLC. Colorado, USA.</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function submitWL(e, form) {
   e.preventDefault();
   const data = new FormData();
@@ -468,11 +466,4 @@ function submitSH(e) {
   const em = document.getElementById('shi-email').value;
   if (n) data.append('name', n);
   data.append('message', m);
-  if (em) data.append('email', em);
-  fetch('https://tally.so/r/ODJPap', { method: 'POST', body: data }).catch(() => {});
-  document.getElementById('sayhi-form').style.display = 'none';
-  document.getElementById('sthanks').style.display = 'block';
-}
-</script>
-</body>
-</html>
+  if (em) data.append('em
