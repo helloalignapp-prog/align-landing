@@ -37,10 +37,16 @@ nav {
 }
 .logo { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; }
 .logo-wm { font-family: var(--serif); font-size: 1.375rem; font-weight: 500; letter-spacing: 0.14em; color: var(--deep); text-transform: uppercase; }
+.nav-right { display: flex; align-items: center; gap: 1.5rem; }
+.nav-signin {
+  font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em;
+  color: var(--deep); text-decoration: none; transition: opacity 0.2s;
+}
+.nav-signin:hover { opacity: 0.7; }
 .pill {
   font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--white); background: var(--deep); border: none; padding: 0.575rem 1.25rem; border-radius: 2rem;
-  cursor: pointer; text-decoration: none; transition: background 0.2s;
+  cursor: pointer; text-decoration: none; transition: background 0.2s; display: inline-block;
 }
 .pill:hover { background: var(--ink); }
 .pill.inv { background: var(--white); color: var(--deep); }
@@ -65,21 +71,7 @@ nav {
 .hero h1 em { font-style: italic; color: var(--deep); }
 .hero-sub { font-size: 1.0625rem; font-weight: 300; color: var(--ink-m); max-width: 38ch; margin-bottom: 2.75rem; line-height: 1.7; }
 .hero-mark { margin-bottom: 2.25rem; }
-
-/* EMAIL FORM */
-.eform { display: flex; gap: 0.5rem; max-width: 22rem; width: 100%; }
-.eform input {
-  flex: 1; font-family: var(--sans); font-size: 0.9375rem; padding: 0.8rem 1.125rem;
-  border: 1px solid var(--br); border-radius: 2rem; background: var(--white); color: var(--ink); outline: none;
-}
-.eform input::placeholder { color: var(--ink-l); }
-.eform input:focus { border-color: var(--mid); }
-.eform button {
-  font-family: var(--sans); font-size: 0.8rem; font-weight: 500; white-space: nowrap;
-  padding: 0.8rem 1.25rem; background: var(--deep); color: var(--white); border: none;
-  border-radius: 2rem; cursor: pointer; transition: background 0.2s;
-}
-.eform button:hover { background: var(--ink); }
+.hero-cta { font-size: 0.95rem; padding: 0.95rem 2rem; }
 
 /* PROBLEM */
 .problem { background: var(--deep); padding: 6rem 2rem; }
@@ -127,7 +119,7 @@ blockquote {
 }
 .phil-b { font-size: 1rem; font-weight: 300; color: var(--ink-m); line-height: 1.8; }
 
-/* FEATURE SECTIONS — flexbox, explicit widths, nothing can overflow */
+/* FEATURE SECTIONS */
 .feat { padding: 6rem 2rem; }
 .refs { background: var(--pale); }
 .mems { background: var(--cream); }
@@ -139,22 +131,17 @@ blockquote {
   justify-content: center;
 }
 
-/* Copy block: fixed width, never grows to crowd the phone */
-.fcopy {
-  flex: 0 0 380px; /* fixed width — does not grow or shrink */
-}
+.fcopy { flex: 0 0 380px; }
 .fcopy .lbl { margin-bottom: 0.75rem; }
 .fcopy .sh { font-size: clamp(1.875rem, 3vw, 2.625rem); margin-bottom: 1rem; }
 .fcopy .bt { font-size: 0.9375rem; line-height: 1.75; }
 
-/* Quote note in reflections */
 .rnote {
   margin-top: 1.5rem; padding: 1rem 1.25rem;
   background: var(--white); border-radius: 0.875rem; border: 1px solid rgba(44,74,62,0.08);
   font-family: var(--serif); font-size: 1rem; font-style: italic; color: var(--deep); line-height: 1.6;
 }
 
-/* Phone frame — fixed 270×519, scaled from 375×720 */
 .pframe {
   flex: 0 0 270px; height: 519px;
   border-radius: 30px; overflow: hidden;
@@ -184,42 +171,14 @@ blockquote {
 }
 .oclose em { font-style: italic; color: var(--light); }
 
-/* SAY HI */
-.sayhi { background: var(--pale); padding: 6rem 2rem; }
-.shi { max-width: 960px; margin: 0 auto; display: flex; gap: 5rem; align-items: flex-start; }
-.shi-copy { flex: 0 0 340px; }
-.shi-copy .sh { font-size: clamp(1.875rem, 3vw, 2.625rem); }
-.shi-copy .bt { margin-top: 1rem; }
-.shi-form-wrap { flex: 1; }
-.sform { display: flex; flex-direction: column; gap: 1rem; }
-.fl { font-size: 0.8125rem; font-weight: 500; color: var(--ink-m); margin-bottom: 0.375rem; display: block; }
-.sform input, .sform textarea {
-  width: 100%; font-family: var(--sans); font-size: 0.9375rem; font-weight: 300;
-  padding: 0.75rem 1rem; border: 1px solid var(--br); border-radius: 0.75rem;
-  background: var(--white); color: var(--ink); outline: none; transition: border-color 0.2s;
-}
-.sform input:focus, .sform textarea:focus { border-color: var(--mid); }
-.sform textarea { resize: vertical; min-height: 120px; }
-.sform button {
-  align-self: flex-start; font-family: var(--sans); font-size: 0.875rem; font-weight: 500;
-  padding: 0.75rem 1.5rem; background: var(--deep); color: var(--white);
-  border: none; border-radius: 2rem; cursor: pointer;
-}
-.sform button:hover { background: var(--ink); }
-.sthanks { display: none; font-family: var(--serif); font-size: 1.125rem; font-style: italic; color: var(--deep); line-height: 1.7; }
-
-/* WAITLIST */
-.wlist { background: var(--deep); padding: 7rem 2rem; text-align: center; }
-.wlist .lbl { color: var(--light); }
-.wlist .sh { color: var(--white); margin: 0 auto 1rem; display: block; }
-.wlist .sh em { color: var(--light); }
-.wlist .bt { color: rgba(255,255,255,0.65); margin: 0 auto 2.5rem; display: block; }
-.wlist .eform { margin: 0 auto; }
-.wlist .eform input { background: rgba(255,255,255,0.1); color: var(--white); border-color: rgba(255,255,255,0.2); }
-.wlist .eform input::placeholder { color: rgba(255,255,255,0.4); }
-.wlist .eform input:focus { border-color: var(--light); }
-.wlist .eform button { background: var(--white); color: var(--deep); }
-.wlist .eform button:hover { background: var(--pale); }
+/* GET STARTED */
+.getstart { background: var(--deep); padding: 7rem 2rem; text-align: center; }
+.getstart .lbl { color: var(--light); }
+.getstart .sh { color: var(--white); margin: 0 auto 1rem; display: block; }
+.getstart .sh em { color: var(--light); }
+.getstart .bt { color: rgba(255,255,255,0.65); margin: 0 auto 2.5rem; display: block; max-width: 36ch; }
+.getstart .pill { font-size: 0.95rem; padding: 0.95rem 2rem; background: var(--white); color: var(--deep); }
+.getstart .pill:hover { background: var(--pale); }
 
 /* FOOTER */
 footer {
@@ -237,15 +196,15 @@ footer {
 /* RESPONSIVE */
 @media (max-width: 900px) {
   nav { padding: 1rem 1.25rem; }
-  .feat-inner, .feat-inner.flip, .shi { flex-direction: column; gap: 2.5rem; align-items: flex-start; }
-  .fcopy, .shi-copy { flex: none; width: 100%; }
+  .feat-inner, .feat-inner.flip { flex-direction: column; gap: 2.5rem; align-items: flex-start; }
+  .fcopy { flex: none; width: 100%; }
   .pframe { margin: 0 auto; }
   .ogrid { grid-template-columns: 1fr 1fr; }
   footer { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 560px) {
-  .eform { flex-direction: column; }
   .ogrid { grid-template-columns: 1fr; }
+  .nav-right { gap: 1rem; }
 }
 </style>
 </head>
@@ -260,7 +219,10 @@ footer {
     </svg>
     <span class="logo-wm">Align</span>
   </a>
-  <a class="pill" href="https://form.typeform.com/to/db97zq5L" target="_blank">Join the waitlist</a>
+  <div class="nav-right">
+    <a class="nav-signin" href="https://app.keepaligning.com/login">Sign in</a>
+    <a class="pill" href="https://app.keepaligning.com/login">Try ALIGN</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -271,10 +233,10 @@ footer {
       <circle cx="44" cy="34" r="18" stroke="#5C8C7A" stroke-width="1.25" fill="none"/>
     </svg>
   </div>
-  <p class="eyebrow">Early access</p>
+  <p class="eyebrow">For couples staying intentionally close</p>
   <h1>The questions you keep <em>meaning to ask.</em></h1>
   <p class="hero-sub">A daily practice for couples who want to stay genuinely connected — not just coexisting.</p>
-  <div style="width:100%;max-width:500px;" data-tf-live="01KNWE90EFTZ9GS8JF29D3SCB5"></div>
+  <a class="pill hero-cta" href="https://app.keepaligning.com/login">Start your practice</a>
 </section>
 
 <!-- PROBLEM -->
@@ -385,42 +347,12 @@ footer {
   </div>
 </section>
 
-<!-- SAY HI -->
-<section class="sayhi">
-  <div class="shi">
-    <div class="shi-copy">
-      <span class="lbl">Say hi</span>
-      <h2 class="sh">We'd love to<br><em>hear from you.</em></h2>
-      <p class="bt">Questions, thoughts, feedback, ideas — or just want to say hello. We read everything and we'll write back.</p>
-      <p class="bt">This is early days and every message genuinely matters to us.</p>
-    </div>
-    <div class="shi-form-wrap">
-      <form class="sform" id="sayhi-form" action="https://tally.so/r/ODJPap" method="POST" target="_blank" onsubmit="showThanks()">
-        <div>
-          <label class="fl">Name <span style="color:var(--ink-l);font-weight:300;">optional</span></label>
-          <input type="text" id="shi-name" placeholder="Your name"/>
-        </div>
-        <div>
-          <label class="fl">Message</label>
-          <textarea id="shi-msg" placeholder="What's on your mind?" required></textarea>
-        </div>
-        <div>
-          <label class="fl">Email <span style="color:var(--ink-l);font-weight:300;">optional — if you'd like a reply</span></label>
-          <input type="email" id="shi-email" placeholder="you@email.com"/>
-        </div>
-        <button type="submit">Send message</button>
-      </form>
-      <p class="sthanks" id="sthanks">Thanks for reaching out.<br>We read everything — and we'll be in touch.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WAITLIST -->
-<section class="wlist on-dark" id="waitlist">
-  <span class="lbl">Early access</span>
-  <h2 class="sh">Be the first to<br>try ALIGN.</h2>
-  <p class="bt">We're building with a small group of couples first. Join the list and we'll reach out when your spot is ready.</p>
-  <div style="width:100%;max-width:500px;margin:0 auto;" data-tf-live="01KNWE90EFTZ9GS8JF29D3SCB5"></div>
+<!-- GET STARTED -->
+<section class="getstart on-dark" id="get-started">
+  <span class="lbl">Get started</span>
+  <h2 class="sh">Start your<br>practice <em>today.</em></h2>
+  <p class="bt">Sign up, invite your partner, and begin. A few minutes a day.</p>
+  <a class="pill" href="https://app.keepaligning.com/login">Try ALIGN</a>
 </section>
 
 <!-- FOOTER -->
@@ -436,34 +368,10 @@ footer {
     <a href="#">Privacy Policy</a>
     <a href="#">Terms of Service</a>
     <a href="#">Cookie Policy</a>
-    <a href="/cdn-cgi/l/email-protection#adc5c8c1c1c2ccc1c4cac3ccddddedcac0ccc4c183cec2c0"><span class="__cf_email__" data-cfemail="0a626f6666656b66636d646b7a7a4a6d676b636624696567">[email&#160;protected]</span></a>
+    <a href="mailto:helloalignapp@gmail.com">Contact</a>
   </div>
-  <span class="fcopy-t">&copy; 2025 [Company Name] LLC. Colorado, USA.</span>
+  <span class="fcopy-t">&copy; 2026 ALIGN. Built in Colorado.</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function submitWL(e, form, thanksId) {
-  e.preventDefault();
-  const email = form.querySelector('input[type="email"]').value;
-  // Post to Tally via hidden iframe trick
-  const iframe = document.createElement('iframe');
-  iframe.style.display = 'none';
-  document.body.appendChild(iframe);
-  const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-  iframeDoc.open();
-  iframeDoc.write('<form method="POST" action="https://tally.so/r/D4J1qb"><input name="email" value="' + email.replace(/"/g,'') + '"/></form>');
-  iframeDoc.close();
-  iframeDoc.forms[0].submit();
-  // Show confirmation
-  form.style.display = 'none';
-  document.getElementById(thanksId).style.display = 'block';
-}
-function submitSH(e) {
-  e.preventDefault();
-  const data = new FormData();
-  const n = document.getElementById('shi-name').value;
-  const m = document.getElementById('shi-msg').value;
-  const em = document.getElementById('shi-email').value;
-  if (n) data.append('name', n);
-  data.append('message', m);
-  if (em) data.append('em
+</body>
+</html>
